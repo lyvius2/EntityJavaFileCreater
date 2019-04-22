@@ -1,6 +1,6 @@
 import cx_Oracle
 
-class GetScheme:
+class SchemeGetter:
     def __init__(self, dbUrl, tableName):
         self.dbUrl = dbUrl
         self.tableName = tableName
