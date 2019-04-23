@@ -17,7 +17,7 @@ class SchemeGetter:
     def getTableInfo(self):
         con = cx_Oracle.connect(self.dbUrl)
         cur = con.cursor()
-        cur.execute("SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '{}'".format(self.tableName))
+        cur.execute("SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '{}' ORDER BY COLUMN_ID ASC".format(self.tableName))
         res = cur.fetchall()
         cur.close()
         con.close()
